@@ -7,7 +7,7 @@ class Data {
   static List<TagModel> tags = [
     TagModel(
       Tag.highlight,
-      name: "Highlite",
+      name: "Highlight",
       imgPath: "assets/images/tags/highlight.jpg",
       selected: false,
     ),
@@ -70,10 +70,10 @@ class Data {
   static List<EntryModel> entryList = [
     EntryModel(
         id: "1",
-        title: "Schiffahrt",
+        title: "Schifffahrt",
         description:
             "Geniessen Sie die Bodenseeregion auf unserer Fähre oder einem unserer Kursschiffe. Ein Abenteuer, dass sich einfach mit den unzähligen Ausflugszielen der Region kombinieren lässt. Auch im Bereich Erlebnisfahrten werden über 100 Fahrten zu 20 unterschiedlichen Themen angeboten. Unser Restaurant direkt am Hafen in Romanshorn rundet Ihren Ausflug kulinarisch ab.",
-        category: "Schiffahrt",
+        category: "Fähre",
         short: "1 km",
         tagsIds: [Tag.trips, Tag.family, Tag.highlight, Tag.food],
         imgPath:
@@ -105,7 +105,7 @@ class Data {
         id: "4",
         title: "Gustav Kahn",
         description:
-            "Ein erlesenes Angebot an Grilladen, vegetarischen Spezialitäten und Salaten stillt den Hunger und exotisches Eis erfrischt den Gaumen. Unkompliziert, kreativ und schnell lädt das Speiseangebot aus unserer «Kombüse» zum Verweilen ein.",
+            "Ein erlesenes Angebot an Grilladen, vegetarischen Spezialitäten und Salaten stillt den Hunger und frisches Bier von der Bar erfrischt den Gaumen. Unkompliziert, kreativ und schnell lädt das Speiseangebot aus unserer «Kombüse» zum Verweilen ein.",
         category: "Restaurant",
         short: "1,1 km",
         tagsIds: [Tag.party, Tag.food, Tag.family],
@@ -129,7 +129,7 @@ class Data {
         title: "Hotel Inseli",
         description:
             "Eingebettet in eine blumige Parkanlage direkt am Bodensee liegt das Park-Hotel Inseli in Romanshorn. Hier übernachten, feiern oder tagen Gäste mit Blick auf den See oder lassen sich im Panoramarestaurant auf der Seeterrasse oder in der Porto-Bar verwöhnen",
-        category: "hotels",
+        category: "Hotels",
         short: "1 km",
         tagsIds: [Tag.hotels, Tag.family],
         imgPath:
@@ -140,13 +140,12 @@ class Data {
     EntryModel(
       id: "c1",
       title: "SBS",
-      description: "10% auf dem Bodensee.",
+      description: "10% auf dem Bodensee",
       category: "Coupon",
       short: "10% Coupon",
       tagsIds: [Tag.shopping],
       imgPath:
           "https://bodensee-schiffe.ch/wp-content/uploads/sites/5/2021/09/Silvester-Schiff-MS-St.-Gallen_4.jpg",
-      //TODO: Img
       liked: false,
     ),
     EntryModel(
@@ -158,7 +157,17 @@ class Data {
       tagsIds: [Tag.shopping, Tag.food],
       imgPath:
           "https://thurgau-bodensee.ch/assets/images/6/06d03257-60b88462.jpg",
-      //TODO: Img
+      liked: false,
+    ),
+    EntryModel(
+      id: "c3",
+      title: "Mio Pizza",
+      description: "10% auf Pizzen",
+      category: "Coupon",
+      short: "10% Coupon",
+      tagsIds: [Tag.shopping, Tag.food],
+      imgPath:
+          "https://www.mios-pizza.ch/wp-content/uploads/2022/10/pizzeria_75-1.jpg",
       liked: false,
     ),
   ];

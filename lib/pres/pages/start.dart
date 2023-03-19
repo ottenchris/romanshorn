@@ -35,7 +35,7 @@ class _StartPageState extends State<StartPage> {
               const SizedBox(height: 96),
               //  Image.asset("assets/images/logo.png", height: 200),
               Text(
-                "Deine Interressen",
+                "Deine Interessen",
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
               const SizedBox(

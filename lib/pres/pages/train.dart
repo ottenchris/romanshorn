@@ -16,13 +16,13 @@ class _TrainState extends State<Train> {
   TextEditingController trainCtrl = TextEditingController();
 
   List<dynamic> _connections = [];
-  bool _isLoading = true;
+  bool _isLoading = false;
 
   @override
   void initState() {
     super.initState();
-    _fetchConnectionsFromApi("Zurich");
-    trainCtrl.text = "Zurich";
+    //_fetchConnectionsFromApi("Zurich");
+    //trainCtrl.text = "Zurich";
   }
 
   Future<void> _fetchConnectionsFromApi(String destination) async {
@@ -58,8 +58,8 @@ class _TrainState extends State<Train> {
                 decoration: const InputDecoration(
                   border: InputBorder.none,
                   focusColor: Colors.blue,
-                  hintText: 'Destination',
-                  prefixIcon: Icon(Icons.search),
+                  hintText: 'Zielbahnhof',
+                  prefixIcon: Icon(Icons.search, color: Colors.black),
                 ),
                 onSubmitted: (String destination) {
                   setState(() {
@@ -69,29 +69,47 @@ class _TrainState extends State<Train> {
                 },
               ),
             ),
-            _isLoading
-                ? const Center(
+            (trainCtrl.text.isEmpty)
+                ? const Card(
+                    margin: EdgeInsets.symmetric(horizontal: 0, vertical: 16),
+                    elevation: 2,
                     child: Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: CircularProgressIndicator(),
+                      padding: EdgeInsets.all(16.0),
+                      child: Text("Bitte Zielbahnhof eingeben",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 16)),
                     ),
                   )
-                : ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: _connections.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      final connection = _connections[index];
-                      final departure = connection['from']['departure'];
-                      final arrival = connection['to']['arrival'];
-                      final duration = connection['duration'];
-                      return ListTile(
-                        leading: const Icon(Icons.train),
-                        title: Text(
-                            'Departure: ${departure.substring(11, 16)} - Arrival: ${arrival.substring(11, 16)}'),
-                        subtitle: Text('Duration: $duration minutes'),
-                      );
-                    },
-                  ),
+                : _isLoading
+                    ? const Center(
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: CircularProgressIndicator(),
+                        ),
+                      )
+                    : (_connections.isEmpty && !_isLoading)
+                        ? const Center(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(vertical: 16.0),
+                              child: Text("Keine Ergebnisse gefunden"),
+                            ),
+                          )
+                        : ListView.builder(
+                            shrinkWrap: true,
+                            itemCount: _connections.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              final connection = _connections[index];
+                              final departure = connection['from']['departure'];
+                              final arrival = connection['to']['arrival'];
+                              final duration = connection['duration'];
+                              return ListTile(
+                                leading: const Icon(Icons.train),
+                                title: Text(
+                                    'Departure: ${departure.substring(11, 16)} - Arrival: ${arrival.substring(11, 16)}'),
+                                subtitle: Text('Duration: $duration minutes'),
+                              );
+                            },
+                          ),
           ]),
     );
   }

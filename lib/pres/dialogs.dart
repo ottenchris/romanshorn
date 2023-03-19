@@ -11,12 +11,13 @@ class Dialogs {
   }) {
     DateTime selectedDate = DateTime.now();
 
-    Future<void> selectDate(BuildContext context) async {
+    Future<void> selectDate(BuildContext sheetContext) async {
       final DateTime? picked = await showDatePicker(
-          context: context,
-          initialDate: selectedDate,
-          firstDate: DateTime(2015, 8),
-          lastDate: DateTime(2101));
+        context: context,
+        initialDate: selectedDate,
+        firstDate: DateTime(2015, 8),
+        lastDate: DateTime(2101),
+      );
       if (picked != null && picked != selectedDate) {
         //setState(() {
         selectedDate = picked;

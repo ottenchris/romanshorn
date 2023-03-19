@@ -21,18 +21,18 @@ class PlanPage extends StatelessWidget {
               const HeaderLogo(),
               const SizedBox(width: double.maxFinite),
               Text(
-                "Favouriten",
+                "Favoriten",
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
               state.entries.any((element) => element.liked)
                   ? const FavouritesGrid()
                   : const Card(
-                      margin: EdgeInsets.symmetric(horizontal: 0, vertical: 16),
-                      elevation: 4,
+                margin: EdgeInsets.symmetric(horizontal: 0, vertical: 16),
+                      elevation: 2,
                       child: Padding(
                         padding: EdgeInsets.all(16.0),
                         child: Text(
-                            "Du hast noch keine Favouriten. Sammle deine Favouriten mit dem Herz-Symbol.",
+                            "Du hast noch keine Favoriten. Sammle deine Favoriten mit dem Herz-Symbol.",
                             textAlign: TextAlign.center,
                             style: TextStyle(fontSize: 16)),
                       ),

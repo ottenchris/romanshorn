@@ -53,7 +53,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                           });
                         },
                   child: Text(
-                    "Map",
+                    "Karte",
                     style: Theme.of(context).textTheme.headlineMedium!.copyWith(
                         color: (!showMap) ? Colors.grey : Colors.black),
                   )),
@@ -92,7 +92,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
             Row(
               children: [
                 Text(
-                  "For you",
+                  "Für Dich",
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 const Spacer(),
@@ -105,7 +105,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                       Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (_) => StartPage()));
                     },
-                    child: Text("Interessen ändern"))
+                    child: const Text("Interessen ändern"))
               ],
             ),
             const InfinityList(),

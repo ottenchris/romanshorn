@@ -50,26 +50,39 @@ class _SearchPageState extends State<SearchPage> {
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const HeaderLogo(),
             SearchBar(
               searchController: searchController,
               searchEntries: searchEntries,
             ),
-            if (results.isEmpty)
-              const Expanded(
-                child: Center(
-                  child: Text("No results found"),
-                ),
-              ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: results.length,
-                itemBuilder: (context, index) {
-                  return EntryCard(entry: results[index]);
-                },
-              ),
-            ),
+            (searchController.text.isEmpty)
+                ? const Card(
+                    margin: EdgeInsets.symmetric(horizontal: 0, vertical: 16),
+                    elevation: 2,
+                    child: Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Text("Bitte Suchbegriff eingeben",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 16)),
+                    ),
+                  )
+                : (results.isEmpty)
+                    ? const Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 16.0),
+                        child: Center(
+                          child: Text("Keine Ergebnisse gefunden"),
+                        ),
+                      )
+                    : Expanded(
+                        child: ListView.builder(
+                          itemCount: results.length,
+                          itemBuilder: (context, index) {
+                            return EntryCard(entry: results[index]);
+                          },
+                        ),
+                      ),
           ],
         ),
       ),
@@ -98,8 +111,8 @@ class SearchBar extends StatelessWidget {
         controller: searchController,
         decoration: const InputDecoration(
           border: InputBorder.none,
-          hintText: "Search",
-          prefixIcon: Icon(Icons.search),
+          hintText: "Suchen",
+          prefixIcon: Icon(Icons.search, color: Colors.black),
         ),
       ),
     );

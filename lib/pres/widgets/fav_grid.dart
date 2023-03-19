@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:romanshorn/logic/entries_cubit.dart';
@@ -18,7 +19,7 @@ class _FavouritesGridState extends State<FavouritesGrid> {
     return BlocBuilder<EntriesCubit, EntriesState>(
       builder: (context, state) {
         List<EntryModel> favs =
-            state.entries.where((element) => element.liked).toList();
+        state.entries.where((element) => element.liked).toList();
 
         return GridView.count(
           physics: const NeverScrollableScrollPhysics(),
@@ -27,7 +28,7 @@ class _FavouritesGridState extends State<FavouritesGrid> {
           shrinkWrap: true,
           children: List.generate(
             favs.length,
-            (index) {
+                (index) {
               return GestureDetector(
                 onTap: () => Dialogs.buildHighlightSheet(
                     context: context, entry: favs[index]),
@@ -36,10 +37,8 @@ class _FavouritesGridState extends State<FavouritesGrid> {
                   children: [
                     AspectRatio(
                       aspectRatio: 3 / 2,
-                      child: Image.network(
-                        favs[index].imgPath,
-                        fit: BoxFit.fitWidth,
-                      ),
+                      child: Image.network(favs[index].imgPath,
+                          fit: BoxFit.fitWidth),
                     ),
                     Card(
                         margin: const EdgeInsets.symmetric(
@@ -76,16 +75,46 @@ class _FavouritesGridState extends State<FavouritesGrid> {
                           onPressed: () {
                             showDialog(
                               context: context,
-                              builder: (context) => AlertDialog(
-                                title: const Text("Wetter Warnung"),
-                                content: const Text(
-                                    "Für Morgen ist schlechtes Wetter vorhergesagt. \nWir schlagen dir alternativ einen Besuch im \"Kino Roxy\" vor."),
-                                actions: [
-                                  TextButton(
-                                      onPressed: () => Navigator.pop(context),
-                                      child: const Text("OK"))
-                                ],
-                              ),
+                              builder: (context) {
+                                TapGestureRecognizer tapGestureRecognizer =
+                                    TapGestureRecognizer();
+
+                                return AlertDialog(
+                                  icon: Icon(Icons.thunderstorm_rounded),
+                                  title: const Text("Wetter Warnung"),
+                                  content: RichText(
+                                    text: TextSpan(
+                                      style: TextStyle(color: Colors.black),
+                                      children: <TextSpan>[
+                                        TextSpan(
+                                            text:
+                                                "Für Morgen ist schlechtes Wetter vorhergesagt. \n\nWir schlagen dir alternativ einen Besuch im \""),
+                                        TextSpan(
+                                          text: "Kino Roxy",
+                                          style: const TextStyle(
+                                              color: Colors.blue),
+                                          recognizer: tapGestureRecognizer
+                                            ..onTap = () async {
+                                              Dialogs.buildHighlightSheet(
+                                                  context: context,
+                                                  entry: state.entries
+                                                      .firstWhere((element) =>
+                                                          element.id == "3"));
+                                            },
+                                        ),
+                                        const TextSpan(text: '\" vor.'),
+                                      ],
+                                    ),
+                                  ),
+                                  actions: [
+                                    TextButton(
+                                        style: TextButton.styleFrom(
+                                            primary: Colors.black),
+                                        onPressed: () => Navigator.pop(context),
+                                        child: const Text("OK"))
+                                  ],
+                                );
+                              },
                             );
                           },
                           icon: const Icon(
@@ -103,6 +132,5 @@ class _FavouritesGridState extends State<FavouritesGrid> {
         );
       },
     );
-    ;
   }
 }
