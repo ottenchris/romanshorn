@@ -88,7 +88,7 @@ class _FavouritesGridState extends State<FavouritesGrid> {
                                       children: <TextSpan>[
                                         TextSpan(
                                             text:
-                                                "Für Morgen ist schlechtes Wetter vorhergesagt. \n\nWir schlagen dir alternativ einen Besuch im \""),
+                                                "Für Morgen ist schlechtes Wetter vorhergesagt. \n\nWir schlagen Dir alternativ einen Besuch im \""),
                                         TextSpan(
                                           text: "Kino Roxy",
                                           style: const TextStyle(
@@ -119,7 +119,7 @@ class _FavouritesGridState extends State<FavouritesGrid> {
                           },
                           icon: const Icon(
                             Icons.warning_rounded,
-                            color: Colors.red,
+                            color: Colors.orange,
                             size: 35,
                           ),
                         ),

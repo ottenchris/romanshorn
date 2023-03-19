@@ -83,8 +83,13 @@ class Dialogs {
                         icon: const Icon(Icons.event_rounded)),
                     const SizedBox(width: 8),
                     ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
                       onPressed: () {},
-                      child: const Text("Book it now!"),
+                      child: const Text("Jetzt buchen"),
                     ),
                   ],
                 ),

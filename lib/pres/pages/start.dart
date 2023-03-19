@@ -66,6 +66,11 @@ class _StartPageState extends State<StartPage> {
                 ),
               ),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                ),
                 onPressed: isSelected.any((element) => element == true)
                     ? () {
                         List<Tag> selectedChips = [];
@@ -83,8 +88,12 @@ class _StartPageState extends State<StartPage> {
                                 builder: (_) => const HomePage()));
                       }
                     : null,
-                child: const Text('Weiter'),
+                child: SizedBox(
+                    height: 45,
+                    width: 170,
+                    child: Center(child: const Text('Weiter'))),
               ),
+              SizedBox(height: 16),
             ],
           ),
         ),

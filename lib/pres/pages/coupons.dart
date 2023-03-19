@@ -15,7 +15,7 @@ class Coupons extends StatelessWidget {
         children: [
           const HeaderLogo(),
           Text(
-            "Coupons für dich",
+            "Aktionen",
             style: Theme.of(context).textTheme.headlineMedium,
           ),
           const SizedBox(height: 32),

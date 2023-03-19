@@ -66,8 +66,8 @@ class _DiscoverPageState extends State<DiscoverPage> {
                 height: MediaQuery.of(context).size.height * 0.60,
                 child: FlutterMap(
                   options: MapOptions(
-                    center: LatLng(47.5658600, 9.3786900),
-                    zoom: 13.5,
+                    center: LatLng(47.568180, 9.371090),
+                    zoom: 14.20,
                   ),
                   nonRotatedChildren: [
                     AttributionWidget.defaultWidget(
