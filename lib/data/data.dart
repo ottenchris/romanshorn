@@ -101,7 +101,7 @@ class Data {
     EntryModel(
       id: "c1",
       title: "Fähren",
-      description: "10% auf dem Bodensee",
+      description: "10% auf alle Fahrten",
       category: "Coupon",
       short: "10% Coupon",
       tagsIds: [Tag.shopping],
