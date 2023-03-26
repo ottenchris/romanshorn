@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:romanshorn/logic/entries_cubit.dart';
 
 import '../../data/data.dart';
+import '../../logic/entries_cubit.dart';
 import '../widgets/header.dart';
 import 'home.dart';
 
@@ -88,12 +88,12 @@ class _StartPageState extends State<StartPage> {
                                 builder: (_) => const HomePage()));
                       }
                     : null,
-                child: SizedBox(
+                child: const SizedBox(
                     height: 45,
                     width: 170,
-                    child: Center(child: const Text('Weiter'))),
+                    child: Center(child: Text('Weiter'))),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
             ],
           ),
         ),

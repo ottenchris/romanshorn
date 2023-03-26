@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:romanshorn/pres/pages/start.dart';
 
 import '../widgets/header.dart';
 import '../widgets/highlight_slider.dart';
 import '../widgets/infinity_list.dart';
+import 'start.dart';
 
 class DiscoverPage extends StatefulWidget {
   const DiscoverPage({Key? key}) : super(key: key);
@@ -45,18 +45,33 @@ class _DiscoverPageState extends State<DiscoverPage> {
               ),
               const VerticalDivider(thickness: 4, color: Colors.black),
               InkWell(
-                  onTap: showMap
-                      ? null
-                      : () {
-                          setState(() {
-                            showMap = !showMap;
-                          });
-                        },
-                  child: Text(
-                    "Karte",
-                    style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                        color: (!showMap) ? Colors.grey : Colors.black),
-                  )),
+                onTap: showMap
+                    ? null
+                    : () {
+                        setState(() {
+                          showMap = !showMap;
+                        });
+                      },
+                child: Text(
+                  "Karte",
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineMedium!
+                      .copyWith(color: (!showMap) ? Colors.grey : Colors.black),
+                ),
+              ),
+              const Spacer(),
+              IconButton(
+                  onPressed: () {
+                    showAboutDialog(
+                      context: context,
+                      applicationName: "Romanshorn",
+                      applicationVersion: "1.0.0",
+                      applicationLegalese:
+                          "Als Prototyp für den HACKATHON THURGAU 2023 entstanden. Nicht voll Funktionsfähig. Die Einträge und Bilder sind nicht echt. Ähnlichkeiten mit realen Personen oder Orten sind rein zufällig.",
+                    );
+                  },
+                  icon: const Icon(Icons.info_rounded)),
             ],
           ),
           const SizedBox(height: 32),
@@ -98,12 +113,12 @@ class _DiscoverPageState extends State<DiscoverPage> {
                 const Spacer(),
                 OutlinedButton(
                     style: OutlinedButton.styleFrom(
-                      primary: Colors.black,
+                      foregroundColor: Colors.black,
                       side: const BorderSide(color: Colors.black),
                     ),
                     onPressed: () {
                       Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (_) => StartPage()));
+                          MaterialPageRoute(builder: (_) => const StartPage()));
                     },
                     child: const Text("Interessen ändern"))
               ],

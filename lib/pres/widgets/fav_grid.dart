@@ -1,9 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:romanshorn/logic/entries_cubit.dart';
 
 import '../../data/models/entry_model.dart';
+import '../../logic/entries_cubit.dart';
 import '../dialogs.dart';
 
 class FavouritesGrid extends StatefulWidget {
@@ -37,7 +37,7 @@ class _FavouritesGridState extends State<FavouritesGrid> {
                   children: [
                     AspectRatio(
                       aspectRatio: 3 / 2,
-                      child: Image.network(favs[index].imgPath,
+                      child: Image.asset(favs[index].imgPath,
                           fit: BoxFit.fitWidth),
                     ),
                     Card(
@@ -80,13 +80,14 @@ class _FavouritesGridState extends State<FavouritesGrid> {
                                     TapGestureRecognizer();
 
                                 return AlertDialog(
-                                  icon: Icon(Icons.thunderstorm_rounded),
+                                  icon: const Icon(Icons.thunderstorm_rounded),
                                   title: const Text("Wetter Warnung"),
                                   content: RichText(
                                     text: TextSpan(
-                                      style: TextStyle(color: Colors.black),
+                                      style:
+                                          const TextStyle(color: Colors.black),
                                       children: <TextSpan>[
-                                        TextSpan(
+                                        const TextSpan(
                                             text:
                                                 "Für Morgen ist schlechtes Wetter vorhergesagt. \n\nWir schlagen Dir alternativ einen Besuch im \""),
                                         TextSpan(
@@ -102,14 +103,14 @@ class _FavouritesGridState extends State<FavouritesGrid> {
                                                           element.id == "3"));
                                             },
                                         ),
-                                        const TextSpan(text: '\" vor.'),
+                                        const TextSpan(text: '" vor.'),
                                       ],
                                     ),
                                   ),
                                   actions: [
                                     TextButton(
                                         style: TextButton.styleFrom(
-                                            primary: Colors.black),
+                                            foregroundColor: Colors.black),
                                         onPressed: () => Navigator.pop(context),
                                         child: const Text("OK"))
                                   ],

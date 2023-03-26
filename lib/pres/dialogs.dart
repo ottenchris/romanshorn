@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:romanshorn/data/models/tag_model.dart';
 
 import '../data/models/entry_model.dart';
+import '../data/models/tag_model.dart';
 import '../data/services.dart';
 
 class Dialogs {
@@ -39,7 +39,7 @@ class Dialogs {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.network(entry.imgPath),
+              Image.asset(entry.imgPath),
               const SizedBox(height: 16),
               Padding(
                 padding: const EdgeInsets.only(left: 8.0, right: 16.0),

@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: IndexedStack(
           index: index,
-          children: [
+          children: const [
             SearchPage(),
             Coupons(),
             DiscoverPage(),

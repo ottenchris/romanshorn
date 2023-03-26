@@ -17,7 +17,7 @@ class EntryCard extends StatelessWidget {
           children: [
             SizedBox(
                 width: MediaQuery.of(context).size.width * 0.4,
-                child: Image.network(entry.imgPath)),
+                child: Image.asset(entry.imgPath)),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(

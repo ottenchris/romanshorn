@@ -1,6 +1,6 @@
-import 'package:romanshorn/data/models/tag_model.dart';
 
 import 'models/entry_model.dart';
+import 'models/tag_model.dart';
 
 class Data {
   //TODO: Make sure to edit always the same list
@@ -72,102 +72,111 @@ class Data {
         id: "1",
         title: "Schifffahrt",
         description:
-            "Geniessen Sie die Bodenseeregion auf unserer Fähre oder einem unserer Kursschiffe. Ein Abenteuer, dass sich einfach mit den unzähligen Ausflugszielen der Region kombinieren lässt. Auch im Bereich Erlebnisfahrten werden über 100 Fahrten zu 20 unterschiedlichen Themen angeboten. Unser Restaurant direkt am Hafen in Romanshorn rundet Ihren Ausflug kulinarisch ab.",
+            "Nutzen Sie unsere Fähre und unsere Kursschiffe für Ihre Ausflüge auf dem Bodensee. Genießen Sie die Bodenseeregion auf unserer Fähre oder einem unserer Kursschiffe. Ein Abenteuer, dass sich mit den unzähligen Ausflugszielen der Region kombinieren lässt. Unser Restaurant direkt am Hafen in Romanshorn rundet Ihren Ausflug kulinarisch ab.",
         category: "Fähre",
         short: "1 km",
         tagsIds: [Tag.trips, Tag.family, Tag.highlight, Tag.food],
-        imgPath:
+        imgWeb:
             "https://thurgau-bodensee.ch/assets/images/f/Bodensee_SBS_MS_St.Gallen_32-65ba7ff5.webp",
+        imgPath: "assets/images/entries/shipping.jpg",
         liked: false),
     EntryModel(
         id: "2",
         title: "Museum am Hafen",
         description:
-            "Das Museum am Hafen befindet sich im Dachstock des alten Zollhauses in Romanshorn. Es zeigt die Entwicklung von Romanshorn als wichtige Verkehrs-Drehscheibe am Bodensee und ist nach modernen Museums-Grundsätzen eingerichtet.",
+            "Das Museum zeigt die Entwicklung von Romanshorn als wichtige Verkehrs-Drehscheibe am Bodensee. Es ist modern und interaktiv gestaltet und bietet einen spannenden Einblick in die Geschichte der Stadt und ihrer Bewohner.",
         category: "Museum",
         short: "1 km",
         tagsIds: [Tag.culture, Tag.museum, Tag.family],
-        imgPath:
+        imgWeb:
             "https://thurgau-bodensee.ch/assets/images/c/4e2d086a-321b5e93.jpg",
+        imgPath: "assets/images/entries/museum.jpg",
         liked: false),
     EntryModel(
         id: "3",
-        title: "Kino Roxy",
+        title: "Kino",
         description:
-            "Das heutige Kino ROXY in Romanshorn war einst ein Filmtheater der ersten Stunde. Heute ist es ein modern ausgestatteter Treffpunkt für Filmliebhaber aller Interessen und fester Bestandteil des Romanshorner Kulturlebens.",
+            "Das Kino bietet ein unterhaltsames und abwechslungsreiches Programm für Jung und Alt. Hier treffen sich Freunde, Familien und Paare, um gemeinsam einen unterhaltsamen Film zu sehen.",
         category: "Kino",
         short: "650 m",
         tagsIds: [Tag.culture, Tag.family, Tag.party],
-        imgPath:
+        imgWeb:
             "https://thurgau-bodensee.ch/assets/images/4/ae745019-e898f223.jpg",
+        imgPath: "assets/images/entries/cinema.jpg",
         liked: false),
     EntryModel(
         id: "4",
-        title: "Gustav Kahn",
+        title: "Strand Bar",
         description:
-            "Ein erlesenes Angebot an Grilladen, vegetarischen Spezialitäten und Salaten stillt den Hunger und frisches Bier von der Bar erfrischt den Gaumen. Unkompliziert, kreativ und schnell lädt das Speiseangebot aus unserer «Kombüse» zum Verweilen ein.",
+            "Wir bieten leckeren Kaffee, frisch gebackene Kuchen, feine Sandwiches, frische Salate und vieles mehr. Geniessen Sie die Sonne auf unserer grossen Terrasse oder im Strandkorb.",
         category: "Restaurant",
         short: "1,1 km",
         tagsIds: [Tag.party, Tag.food, Tag.family],
-        imgPath:
+        imgWeb:
             "https://images.squarespace-cdn.com/content/v1/62066c5bf86a9127ee2813fa/ff086739-9ba0-4f46-a8e5-320623f3dfd5/20220616_191224_Gustav75.jpg?format=750w",
+        imgPath: "assets/images/entries/bar.jpg",
         liked: false),
 
     EntryModel(
         id: "5",
         title: "Seebad",
         description:
-            "Sich im herrlich gelegenen Seebad Romanshorn nach einem erlebnisreichen Tag, einer schönen Wanderung oder einer Velotour ein erfrischendes Bad gönnen oder auch nur «sünnele» - da jubeln Körper und Seele!",
+            "Nach einem erlebnisreichen Tag, einer schönen Wanderung oder einer Velotour können Sie bei uns ein erfrischendes Bad nehmen und einfach entspannen.",
         category: "Schwimmbad",
         short: "1 km",
         tagsIds: [Tag.family, Tag.trips],
-        imgPath:
+        imgWeb:
             "https://thurgau-bodensee.ch/assets/images/e/Seebad_Romanshorn-a956da4f.webp",
+        imgPath: "assets/images/entries/bath.jpg",
         liked: false),
     EntryModel(
         id: "6",
-        title: "Hotel Inseli",
+        title: "Hotel am See",
         description:
-            "Eingebettet in eine blumige Parkanlage direkt am Bodensee liegt das Park-Hotel Inseli in Romanshorn. Hier übernachten, feiern oder tagen Gäste mit Blick auf den See oder lassen sich im Panoramarestaurant auf der Seeterrasse oder in der Porto-Bar verwöhnen",
+            "Das Hotel direkt am Bodensee beitete Ihnen einen unvergesslichen Aufenthalt. Geniessen Sie die herrliche Aussicht auf den Bodensee und die Berge. Das Hotel ist der ideale Ausgangspunkt für Ausflüge in die Bodenseeregion. Gleichzeitig kann auch direkt vor Ort entspannt und lecker gegessen werden.",
         category: "Hotels",
         short: "1 km",
         tagsIds: [Tag.hotels, Tag.family],
-        imgPath:
+        imgWeb:
             "https://thurgau-bodensee.ch/assets/images/5/6ddc9d95-08d8a1ac.jpg",
+        imgPath: "assets/images/entries/hotel.jpg",
         liked: false),
 
     // Coupons
     EntryModel(
       id: "c1",
-      title: "SBS",
+      title: "Fähren",
       description: "10% auf dem Bodensee",
       category: "Coupon",
       short: "10% Coupon",
       tagsIds: [Tag.shopping],
-      imgPath:
+      imgWeb:
           "https://bodensee-schiffe.ch/wp-content/uploads/sites/5/2021/09/Silvester-Schiff-MS-St.-Gallen_4.jpg",
+      imgPath: "assets/images/entries/sbs.jpg",
       liked: false,
     ),
     EntryModel(
       id: "c2",
-      title: "Restaurant HAFEN",
+      title: "Hafen Restaurant",
       description: "15% auf Alles",
       category: "Coupon",
       short: "15% Coupon",
       tagsIds: [Tag.shopping, Tag.food],
-      imgPath:
+      imgWeb:
           "https://thurgau-bodensee.ch/assets/images/6/06d03257-60b88462.jpg",
+      imgPath: "assets/images/entries/restaurant.jpg",
       liked: false,
     ),
     EntryModel(
       id: "c3",
-      title: "Mio Pizza",
+      title: "Lecker Pizza",
       description: "10% auf Pizzen",
       category: "Coupon",
       short: "10% Coupon",
       tagsIds: [Tag.shopping, Tag.food],
-      imgPath:
+      imgWeb:
           "https://www.mios-pizza.ch/wp-content/uploads/2022/10/pizzeria_75-1.jpg",
+      imgPath: "assets/images/entries/pizza.jpg",
       liked: false,
     ),
   ];

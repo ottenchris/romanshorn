@@ -14,7 +14,7 @@ class TagModel {
   });
 
   // Get tag by id
-  static TagModel getById(String id) {
+  static TagModel getById(Tag id) {
     return Data.tags.firstWhere((tag) => tag.id == id);
   }
 }

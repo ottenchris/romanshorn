@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:romanshorn/pres/widgets/fav_grid.dart';
-import 'package:romanshorn/pres/widgets/header.dart';
 
 import '../../logic/entries_cubit.dart';
+import '../widgets/fav_grid.dart';
+import '../widgets/header.dart';
 
 class PlanPage extends StatelessWidget {
   const PlanPage({Key? key}) : super(key: key);

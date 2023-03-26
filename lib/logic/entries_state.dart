@@ -4,13 +4,13 @@ part of 'entries_cubit.dart';
 abstract class EntriesState {
   final List<EntryModel> entries;
 
-  EntriesState(this.entries);
+  const EntriesState(this.entries);
 }
 
 class AllEntries extends EntriesState {
-  AllEntries(List<EntryModel> entries) : super(entries);
+  const AllEntries(List<EntryModel> entries) : super(entries);
 }
 
 class CustomCategoryEntries extends EntriesState {
-  CustomCategoryEntries(List<EntryModel> entries) : super(entries);
+  const CustomCategoryEntries(List<EntryModel> entries) : super(entries);
 }

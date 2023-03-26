@@ -26,10 +26,7 @@ class MyBottomNav extends StatelessWidget {
         Icon(Icons.train_rounded, size: 33),
         Icon(Icons.favorite_outline_rounded, size: 33),
       ],
-      onTap: (index) {
-        changePage(index);
-        print(index);
-      },
+      onTap: (index) => changePage(index),
     );
   }
 }

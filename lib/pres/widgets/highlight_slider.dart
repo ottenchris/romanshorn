@@ -33,7 +33,7 @@ class _HighlightSliderState extends State<HighlightSlider> {
                     children: [
                       AspectRatio(
                           aspectRatio: 5 / 4,
-                          child: Image.network(state.entries[index].imgPath,
+                          child: Image.asset(state.entries[index].imgPath,
                               fit: BoxFit.cover)),
                       Align(
                         alignment: Alignment.bottomCenter,
@@ -42,7 +42,7 @@ class _HighlightSliderState extends State<HighlightSlider> {
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 16, vertical: 8),
                             child: Text(state.entries[index].title,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 18, fontWeight: FontWeight.w600),
                                 textAlign: TextAlign.center),
                           ),

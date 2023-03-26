@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:romanshorn/logic/entries_cubit.dart';
 
 import '../../data/models/entry_model.dart';
+import '../../logic/entries_cubit.dart';
 import '../dialogs.dart';
 import 'like_btn.dart';
 
@@ -41,7 +41,7 @@ class _CouponListState extends State<CouponList> {
                         children: [
                           SizedBox(
                             width: MediaQuery.of(context).size.width * 0.4,
-                            child: Image.network(
+                            child: Image.asset(
                               coupons[index].imgPath,
                               fit: BoxFit.fill,
                             ),
@@ -62,7 +62,7 @@ class _CouponListState extends State<CouponList> {
                             // Title
                             Text(coupons[index].title,
                                 style: Theme.of(context).textTheme.titleLarge),
-                            SizedBox(height: 8),
+                            const SizedBox(height: 8),
                             Text(coupons[index].description,
                                 style: Theme.of(context).textTheme.titleMedium),
 

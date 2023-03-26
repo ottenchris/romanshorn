@@ -6,7 +6,7 @@ import '../widgets/entry_card.dart';
 import '../widgets/header.dart';
 
 class SearchPage extends StatefulWidget {
-  SearchPage({Key? key}) : super(key: key);
+  const SearchPage({Key? key}) : super(key: key);
 
   @override
   State<SearchPage> createState() => _SearchPageState();
@@ -70,7 +70,7 @@ class _SearchPageState extends State<SearchPage> {
                   )
                 : (results.isEmpty)
                     ? const Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 16.0),
+              padding: EdgeInsets.symmetric(vertical: 16.0),
                         child: Center(
                           child: Text("Keine Ergebnisse gefunden"),
                         ),

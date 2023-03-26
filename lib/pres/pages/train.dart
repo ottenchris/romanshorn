@@ -3,7 +3,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:romanshorn/pres/widgets/header.dart';
+
+import '../widgets/header.dart';
 
 class Train extends StatefulWidget {
   const Train({Key? key}) : super(key: key);

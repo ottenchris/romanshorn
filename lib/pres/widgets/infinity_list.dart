@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:romanshorn/logic/entries_cubit.dart';
 
+import '../../logic/entries_cubit.dart';
 import '../dialogs.dart';
 import 'like_btn.dart';
 
@@ -36,7 +36,7 @@ class _InfinityListState extends State<InfinityList> {
                         children: [
                           SizedBox(
                             width: MediaQuery.of(context).size.width * 0.40,
-                            child: Image.network(
+                            child: Image.asset(
                               state.entries[index].imgPath,
                               fit: BoxFit.cover,
                             ),
@@ -55,7 +55,7 @@ class _InfinityListState extends State<InfinityList> {
                             // Category
                             Text(state.entries[index].category,
                                 style: Theme.of(context).textTheme.titleMedium),
-                            SizedBox(height: 8.0),
+                            const SizedBox(height: 8.0),
                             // Title
                             Text(state.entries[index].title,
                                 style: Theme.of(context).textTheme.titleLarge),

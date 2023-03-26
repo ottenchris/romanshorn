@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:romanshorn/data/models/entry_model.dart';
 
+import '../../data/models/entry_model.dart';
 import '../../logic/entries_cubit.dart';
 
 class LikeBtn extends StatelessWidget {
@@ -30,8 +30,8 @@ class LikeBtn extends StatelessWidget {
             }
           },
           icon: entry.liked
-              ? Icon(Icons.favorite, color: Colors.red)
-              : Icon(Icons.favorite_border)),
+              ? const Icon(Icons.favorite, color: Colors.red)
+              : const Icon(Icons.favorite_border)),
     );
   }
 }
