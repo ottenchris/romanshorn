@@ -3,13 +3,11 @@ import '../data.dart';
 class TagModel {
   final Tag id;
   final String name;
-  final String imgPath;
   final bool selected;
 
   TagModel(
     this.id, {
     required this.name,
-    required this.imgPath,
     required this.selected,
   });
 
