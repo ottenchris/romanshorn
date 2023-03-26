@@ -63,8 +63,12 @@ class _CouponListState extends State<CouponList> {
                             Text(coupons[index].title,
                                 style: Theme.of(context).textTheme.titleLarge),
                             const SizedBox(height: 8),
-                            Text(coupons[index].description,
-                                style: Theme.of(context).textTheme.titleMedium),
+                            Flexible(
+                              child: Text(coupons[index].description,
+                                  maxLines: 2,
+                                  style:
+                                      Theme.of(context).textTheme.titleMedium),
+                            ),
 
                             Expanded(child: Container()),
 

@@ -68,7 +68,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                       applicationName: "Romanshorn",
                       applicationVersion: "1.0.0",
                       applicationLegalese:
-                          "Als Prototyp für den HACKATHON THURGAU 2023 entstanden. Nicht voll Funktionsfähig. Die Einträge und Bilder sind nicht echt. Ähnlichkeiten mit realen Personen oder Orten sind rein zufällig.",
+                          "Dieser Prototyp ist auf dem HACKATHON THURGAU 2023 entstanden.\nEr ist nicht voll funktionsfähig, die Bilder stammen von Pixabay und die Einträge sind nicht echt. Ähnlichkeiten mit realen Orten sind rein zufällig.",
                     );
                   },
                   icon: const Icon(Icons.info_rounded)),
